@@ -1,0 +1,32 @@
+Routing conventions 
+1) All routes must live inside the app folder
+2) Route files must be named either page.js or page.tsx
+3) Each folder represents a segments of the URL path
+
+when convetion are followed the file automatically becomes available as a routes
+
+folder name -> page.tsx   
+ie profile-> page.tsx    
+we can access it by http://localhost:3000/profile
+
+
+
+Nested routes
+localhost:3000/profile
+localhost:3000/profile/user1
+folder name(profile) -> page.tsx  + folder1 + folder2 
+folder1 (first)-> page.tsx
+folder2 (second)-> page.tsx
+ie profile-> page.tsx    
+we can access it by http://localhost:3000/profile/first  => access first folder
+
+
+
+dynamic routes
+folder name(profile) -> page.tsx  + [folder1] 
+[folder1] -> page.tsx
+localhost:3000/profile/1 
+
+
+nested dynamic routes
+localhost:3000/product/1/review/1
