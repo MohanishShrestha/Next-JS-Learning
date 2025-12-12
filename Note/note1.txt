@@ -66,5 +66,53 @@ if u want to actually want an underscore in your URL, use "%5F" instead, That's 
 the URL-encoded version of an underscore
 
 #Route groups
-let us logically organize our routes nd project files without impacting the URL structure
- ie register, login, forgetPassword
+let us logically organize our routes and project files without impacting the URL structure
+ ie register, login, forgetPassword in (auth)
+
+
+#layout
+like header content footer
+to create a layout export a react component from a layout.js or layout.tsx file
+that component takes a children prop which Next.js will populate with your page content
+header ra footer lai root ma rakhna layout.tsx ma garra jun page gaye ni hatdaina ani
+
+
+#Nested layout
+we can also add on different folder like on review folder
+
+
+# Multiple root layouts
+route group uses 
+- organize our project structure without affecting URLs
+- Apply layout selectively to specific parts of our app
+see tutorial2 for example 
+here we have put main layout file on each route group so that each have its own layout
+also add atleast root or main page.tsx on the route group
+
+
+# Routing meta data 
+the metadata api in next is a prowerful feature that lets us define metadata foe each page 
+metadata ensures our content looks great when its shared or indexed bt search engines
+two ways to handle metadata in layout.tsx or page.tsx file:
+- export a static metadata object
+- export a dynamic generateMetadata function
+
+Configuring metadata
+Metadata rules
+- Both layout.tsx and page.tsx can export metadata. layout metadata
+  applies to all its pages, while page metadata is specific to that page
+- Metadata follows a top-down order, starting the root level
+- When metadata exists in multiple places along a route, they merge together,
+  with page metadata overridding layout metadata for matching properties
+
+look using inspect where title and meta data is shown
+ note: deeper metadata take priority
+
+ 
+
+
+ 
+
+
+
+
