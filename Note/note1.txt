@@ -1,17 +1,17 @@
-Routing conventions 
+#Routing conventions 
 1) All routes must live inside the app folder
 2) Route files must be named either page.js or page.tsx
 3) Each folder represents a segments of the URL path
 
 when convetion are followed the file automatically becomes available as a routes
 
-folder name -> page.tsx   
+#folder name -> page.tsx   
 ie profile-> page.tsx    
 we can access it by http://localhost:3000/profile
 
 
 
-Nested routes
+#Nested routes
 localhost:3000/profile
 localhost:3000/profile/user1
 folder name(profile) -> page.tsx  + folder1 + folder2 
@@ -22,11 +22,49 @@ we can access it by http://localhost:3000/profile/first  => access first folder
 
 
 
-dynamic routes
+#dynamic routes
 folder name(profile) -> page.tsx  + [folder1] 
 [folder1] -> page.tsx
 localhost:3000/profile/1 
 
 
-nested dynamic routes
+#nested dynamic routes
 localhost:3000/product/1/review/1
+
+
+#catch all segments 
+here by using [...slug]-> page.tsx we can accept all URL
+do[[...slug]] so that default can also be called
+using this we can call multiple url 
+
+
+#Not Found page
+file name must be exactly not-Found in app
+we can import the not-found ie import { notFound } from "next/navigation";and add notfound file here on folder and edit as we like
+if we need to show different msg usePathname
+to use we need to use client ie "use client" look at review not-found
+
+
+#file colocation
+we can saftly colocate file route segments in app directory without worrying them becoming Routing
+we can also use external folder so it doesn't make routing
+
+
+
+#private folder
+- for internal stuff and Next js knows
+- the folder and all its subfolders are excliided from Routing
+- add an underscore at the start of the folder name ie _lib
+
+useful for
+- keeping your UI logic separate from routing logic
+- Having a consistent way to organize internal files in yur project
+- Making it easier to group related files in your code editor
+- Avoiding potential naming conflicts with future Next.js file naming conventions
+
+if u want to actually want an underscore in your URL, use "%5F" instead, That's just
+the URL-encoded version of an underscore
+
+#Route groups
+let us logically organize our routes nd project files without impacting the URL structure
+ ie register, login, forgetPassword
