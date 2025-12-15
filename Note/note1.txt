@@ -58,7 +58,7 @@ we can also use external folder so it doesn't make routing
 
 useful for
 - keeping your UI logic separate from routing logic
-- Having a consistent way to organize internal files in yur project
+- Having a consistent way to organize internal files in your project
 - Making it easier to group related files in your code editor
 - Avoiding potential naming conflicts with future Next.js file naming conventions
 
@@ -91,8 +91,8 @@ also add atleast root or main page.tsx on the route group
 
 
 # Routing meta data 
-the metadata api in next is a prowerful feature that lets us define metadata foe each page 
-metadata ensures our content looks great when its shared or indexed bt search engines
+the metadata api in next js is a prowerful feature that lets us define metadata for each page 
+metadata ensures our content looks great when its shared or indexed by search engines
 two ways to handle metadata in layout.tsx or page.tsx file:
 - export a static metadata object
 - export a dynamic generateMetadata function
@@ -109,9 +109,30 @@ look using inspect where title and meta data is shown
  note: deeper metadata take priority
 
  
+#title metadata
+- default(automatical use it if no title is there), 
+  template (to add prefixes ie %s | codeevolution if i access blog then title will be blog(title) | codeevolution), 
+  absolute (if u want only the title you give then this)
+
+ # navigation
+ File based routing syatem
+ Defining routes for our applications root, nested routes, dynamic routes, and catch-all routes
+ we have been typing Urls directly in the browser to test these routes
+ Users
+ - click links 
+ - get redirected after certain actions
+
+ UI navigation
+ for client side navigaton we use <Link> component
+ ie <Link href="/products/2">Product 2</Link>
+
+ if we use replace <Link href="/products/3" replace>Product 3</Link>
+and we go back it goes to not previous page but goes to home page
+replace overwrite current history
 
 
- 
+#Active links
+
 
 
 

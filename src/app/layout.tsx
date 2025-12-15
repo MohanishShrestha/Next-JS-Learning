@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./global.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -19,19 +20,28 @@ export default function PageRootLayout({
             <h1 className="text-2xl font-bold">My App</h1>
             <ul className="flex space-x-6">
               <li>
-                <a href="/" className="hover:underline">
+                {/* <a href="/" className="hover:underline">
                   Home
-                </a>
+                </a> */}
+                <Link href="/" className="hover:underline">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="/about" className="hover:underline">
+                {/* <a href="/about" className="hover:underline">
                   About
-                </a>
+                </a> */}
+                <Link href="/about" className="hover:underline">
+                  About
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:underline">
+                {/* <a href="/contact" className="hover:underline">
                   Contact
-                </a>
+                </a> */}
+                <Link href="/contact" className="hover:underline">
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
