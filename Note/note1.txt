@@ -132,8 +132,67 @@ replace overwrite current history
 
 
 #Active links
+Making or showing the link u are in is active 
+ const isActive = pathname === link.path || (pathname.startsWith(link.path) && link.path !== "/");
+                return (
+                    <Link className={isActive? "text-blue-500 font-bold mr-4" : "text-blue-500 mr-4"} key={link.name} href={link.path}>
+                        {link.name}
+                    </Link>
+                )
 
 
+#params and searchParams
+for a given URL,
+- params is a promise that resolves to an object containing the dynamic
+  route parameters (like id)
+- searchParams is a promise that resolves to an object containing
+  the query parameters (lke filters and sorting)
+Note -> while page.tsx has access to both params and searchParams , layout.tsx only has access to params
 
 
+#Navigating Programmatically
+after doing certain action a certain action get executed
+ const handleClick = () => {
+    console.log("Order placed successfully!");
+    router.push("/");
+  };
+
+
+# template
+-templates are similar to layouts in that they are also UI shared between multiple
+ pages in your app
+- Whenever a user navigates between routes sharing a template yo get a 
+ complete fresh start
+  * a new template component instance is mounted
+  * DOM elements are recreated
+  * state is cleared
+  * effects are re-synchronized
+
+create by 
+- exporting a default react component from a template.js or tsx file
+- like layouts templates need to accept a children prop to render the nested oute segments
+
+simply make layout to template.tsx
+we can also use both layout and template together
+layout render first and its children are placed by templates
+mostly layout is used 
+
+
+#loding UI
+loading.tsx
+this file helps us create loading states that users see while waiting for content to load in a specific route segments
+the loading state appear instantly when navigating letting users know that the application is responsive and actively loading content
+
+benefit
+user gets immidate feedback
+makes app feel responsive and users know they did something
+make layout reactive
+
+# Error handling
+error boundry must be client component
+create a error.tsx or js
+- it automatically wraps route segments and their nested childern in a  react Error boundey
+- you can create error UIs for specific segments using the file-system hierarchy
+- it isolates error to affected segments while keeping the rest of your app functional
+- it enables you to attempt to recover from an error without requiring a full page reload
 

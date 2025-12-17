@@ -8,8 +8,10 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-    <Link href="/products">Go to Products</Link>
-      <h1>Welcome guys</h1>
+      <Link href="/products">Go to Products</Link>
+      <h1>Welcome guys to home</h1>
+      <Link href="/articles/breaking-news-123?lang=en">Read in English</Link>
+      <Link href="/articles/breaking-news-123?lang=fr">Read in French</Link>
     </>
   );
 }
