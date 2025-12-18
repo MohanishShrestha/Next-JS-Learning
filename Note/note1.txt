@@ -196,3 +196,61 @@ create a error.tsx or js
 - it isolates error to affected segments while keeping the rest of your app functional
 - it enables you to attempt to recover from an error without requiring a full page reload
 
+# recovering from errors
+
+# handling errors in nested routes
+- errors always bubble up to find the closest parent error boundary
+- an error.tsx file handles errors not just for its own folder but for all the nested child segments below it too
+-  by strategically placing error.tsx files at differnt levels in your route folders you can control exactly how detailed your error handling gets
+i.e moving error from review to product folder
+- where you put your error.tsx file makea huge difference 
+it determines exactly which parts of your UI get affected when things go wrong
+
+# handling errors in layouts
+error.tsx file wont handle error of layout from same segments
+move the file to outer folder
+
+
+#handling global errors
+make error-wrapper.tsx and global-error.tsx  
+here the error-wrapper helps to smiluate the error 
+but global-error will not appear on developer  and works only on producyion mode (npm build and npm run start)
+
+- if an error boundary can't catch errors in layout.tsx file from the same segment what about errors in the root layout?
+- it doesn't have a parent segment - how do we handle those error?
+Next.js provides a special file called global-error.tsx that goes in your root app directort
+-this is ur last line of defence when somethings goes catastrophically wrong at the highest level of ur app
+    - works only in production mode
+    - requires html and body tags to be rendered
+
+# Parallel routes
+what are they 
+- complex dashboard can be done tradiationlly way like making component and adding them on organize
+- Parallel routes in next.js are defined using a feature known as "slots"
+- SLots help organize content in a modular way
+- to create a slot we use the `@folder` naming conventions
+- Each defined slot automatically becomes a prop in it corresponnding `layout.tsx` file
+
+Parallel routes use cases
+- Dashboards with multiple sections
+- Split-view interfaces
+- Multi-pane layouts
+- Complex admin interfaces
+
+Benefits
+1) Parallel routes are great for splitting a layout into manageable slots
+(espicially when different team work on different parts)
+2) Independent route handling (each loading and error handling)
+  - Each slott in your layout , such as users, revenue and notifications, 
+  can handle its own loading and error states
+  - This granular control is particularly useful in scenarios where different sections of the page 
+  load at varying speeds or encounter unique errors
+3) Sub-navigation
+  - each slot can essentially function as a mini application complete with its own 
+  navigation and state management
+  - User can interact with each section separately, applying filters, sorting data or navigation
+  through pages without affecting other parts
+
+
+ # Unmatched routes
+ 

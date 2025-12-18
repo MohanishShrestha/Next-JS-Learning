@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import Link from "next/link";
+import { ErrorWrapper } from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -47,7 +48,9 @@ export default function PageRootLayout({
           </nav>
         </header>
 
-        <main className="flex-1 container mx-auto px-4 py-8">{children}</main>
+        <main className="flex-1 container mx-auto px-4 py-8">
+          <ErrorWrapper>{children}</ErrorWrapper>
+        </main>
 
         <footer className="bg-gray-800 text-white mt-auto">
           <div className="container mx-auto px-4 py-8 text-center">
