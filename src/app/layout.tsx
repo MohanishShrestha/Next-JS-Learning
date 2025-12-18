@@ -48,9 +48,7 @@ export default function PageRootLayout({
           </nav>
         </header>
 
-        <main className="flex-1 container mx-auto px-4 py-8">
-          <ErrorWrapper>{children}</ErrorWrapper>
-        </main>
+        <main className="flex-1 container mx-auto px-4 py-8">{children}</main>
 
         <footer className="bg-gray-800 text-white mt-auto">
           <div className="container mx-auto px-4 py-8 text-center">

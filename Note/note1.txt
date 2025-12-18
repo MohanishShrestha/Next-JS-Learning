@@ -253,4 +253,36 @@ Benefits
 
 
  # Unmatched routes
+ Navigation from the UI
+ - when navigating the UI(like clicking links), Next.js keeps showing
+ whatever was in the Unmatched slots before
+
+ Page reload
+ - Next.js looks for a `default.tsx` file in each unmatched slot
+ - This file is critical as it serves as a fallback to render content when the framework
+ con't retrive a slots active state from the current URL
+ - Without the file you will get a 404 error
+ 
+
+ #conditional routes
+ -imagine u want to show different content  based on whether a user
+  is logged in or not
+- u might want to display a dashboard for authenticed users but show a login
+  page for those who are not
+- Conditional routes allow us to achieve this while mantining completly separate code on the
+  same URL
+
+
+  #Intercepting routes
+  -It is an advance routing mechanism that allows you to load a route from part of your application within
+   the current layout
+  - Its particularly useful when u want to display new content
+    while keeping your user in the same context
+
+  conventions:
+  1) use (.) to match segments on the same level
+  2) use (..) to match segments one level above
+  3) use (..)(..) to match segments 2 level above
+  4) use (...) to match segments from the root app directory
+
  
